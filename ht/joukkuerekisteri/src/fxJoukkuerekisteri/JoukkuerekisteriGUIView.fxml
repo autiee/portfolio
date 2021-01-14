@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import fi.jyu.mit.fxgui.ComboBoxChooser?>
+<?import fi.jyu.mit.fxgui.ListChooser?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxJoukkuerekisteri.JoukkuerekisteriGUIController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Tiedosto">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleTallenna" text="Tallenna" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleTulosta" text="Tulosta" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleLopeta" text="Lopeta" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Muokkaa">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleLisaajoukkue" text="Lisää uusi joukkue" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleLisaapelaaja" text="Lisää uusi pelaaja" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleMuokkaaJoukkue" text="Muokkaa joukkuetta" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleMuokkaaPelaaja" text="Muokkaa pelaajaa" />
+                  <MenuItem mnemonicParsing="false" onAction="#handlePoistapelaaja" text="Poista pelaaja" />
+                  <MenuItem mnemonicParsing="false" onAction="#handlePoistajoukkue" text="Poista joukkue" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Näytä">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleTieto" text="Tietoa sarjasta" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <BorderPane BorderPane.alignment="CENTER">
+         <bottom>
+            <ListChooser fx:id="chooserJoukkueet" maxHeight="325.0" maxWidth="160.0" rivit="AC Pupuhuhta&#10;FC Honkola&#10;FC Konginkangs&#10;" BorderPane.alignment="CENTER" />
+         </bottom>
+         <center>
+            <Label text="Joukkueet" BorderPane.alignment="CENTER" />
+         </center>
+         <top>
+            <HBox BorderPane.alignment="CENTER">
+               <children>
+                  <ComboBoxChooser fx:id="cbEhdot" maxWidth="100.0" onAction="#handleHakuehto" rivit="nimi kotipaikkakunta perustusvuosi" />
+                  <TextField fx:id="textHakuehto" maxWidth="100.0" onAction="#handleHakuehto" />
+               </children>
+            </HBox>
+         </top>
+      </BorderPane>
+   </left>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <center>
+            <ScrollPane fx:id="panelJoukkue" fitToWidth="true" maxWidth="500.0" BorderPane.alignment="CENTER">
+               <content>
+                  <GridPane minWidth="240.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="118.4000244140625" minWidth="10.0" prefWidth="108.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="142.79998779296875" minWidth="10.0" prefWidth="132.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label fx:id="labelKaksi" text="Kotipaikkakunta:" GridPane.rowIndex="1">
+                           <padding>
+                              <Insets left="10.0" right="10.0" />
+                           </padding>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label fx:id="labelKolme" text="Perustusvuosi:" GridPane.rowIndex="2">
+                           <padding>
+                              <Insets left="10.0" right="10.0" />
+                           </padding>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label fx:id="labelNelja" text="Kotikenttä:" GridPane.rowIndex="3">
+                           <padding>
+                              <Insets left="10.0" right="10.0" />
+                           </padding>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label fx:id="labelViisi" text="Pelaajien määrä:" GridPane.rowIndex="4">
+                           <padding>
+                              <Insets left="10.0" right="10.0" />
+                           </padding>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="textKaksi" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="textKolme" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="textNelja" editable="false" prefWidth="129.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="textViisi" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="labelKuusi" text="Keskipituus:" GridPane.rowIndex="5">
+                           <padding>
+                              <Insets left="10.0" right="10.0" />
+                           </padding>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label fx:id="labelSeitseman" text="Keskipaino:" GridPane.rowIndex="6">
+                           <padding>
+                              <Insets left="10.0" right="10.0" />
+                           </padding>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="textKuusi" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextField fx:id="textSeitseman" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Label fx:id="labelYksi" text="Nimi:">
+                           <padding>
+                              <Insets left="10.0" right="10.0" />
+                           </padding>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="textYksi" editable="false" GridPane.columnIndex="1" />
+                        <Label fx:id="labelKahdeksan" text="Keski-ikä:" GridPane.rowIndex="7">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                           <padding>
+                              <Insets left="10.0" right="10.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="textKahdeksan" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                     </children>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+         </center>
+      </BorderPane>
+   </center>
+   <right>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <top>
+            <Label text="Pelaajat" BorderPane.alignment="CENTER" />
+         </top>
+         <center>
+            <ListChooser fx:id="chooserPelaajat" maxWidth="160.0" rivit="Viorel Geamana&#10;Igor&#10;Pablo&#10;Marcos Sanchez&#10;" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+   </right>
+</BorderPane>

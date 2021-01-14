@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxJoukkuerekisteri.TietoaSarjastaController">
+   <left>
+      <BorderPane BorderPane.alignment="CENTER" />
+   </left>
+   <center>
+      <BorderPane BorderPane.alignment="CENTER">
+         <top>
+            <Label text="Tietoa sarjasta" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="20.0" />
+               </BorderPane.margin>
+               <padding>
+                  <Insets left="20.0" right="20.0" top="20.0" />
+               </padding></Label>
+         </top>
+         <center>
+            <GridPane BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="322.59998779296876" minWidth="146.59998779296876" prefWidth="151.40003662109376" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="299.4000122070313" minWidth="123.4000122070313" prefWidth="294.5999633789063" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Pelaajien määrä:" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Hyökkääjiä:" GridPane.rowIndex="2">
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Keskikenttäpelaajia:" GridPane.rowIndex="3">
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="textPMaara" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" right="150.0" top="5.0" />
+                     </GridPane.margin></TextField>
+                  <TextField fx:id="textHyokkaajat" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" right="150.0" top="5.0" />
+                     </GridPane.margin></TextField>
+                  <TextField fx:id="textKeskiK" editable="false" prefWidth="129.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" right="150.0" top="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label text="Joukkueiden määrä:">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="textJMaara" editable="false" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" right="150.0" top="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label text="Puolustajia:" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="20.0" right="10.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Maalivahteja:" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="20.0" right="10.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Pelaajien keskipituus:" GridPane.rowIndex="6">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="20.0" right="10.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Pelaajien keskipaino:" GridPane.rowIndex="7">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="20.0" right="10.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="textPuolustajat" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" right="150.0" top="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="textMaalivahdit" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" right="150.0" top="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="textPPituus" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" right="150.0" top="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="textPPaino" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" right="150.0" top="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label text="Pelaajien keski-ikä:" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="20.0" right="10.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="textPIka" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" right="150.0" top="5.0" />
+                     </GridPane.margin>
+                  </TextField>
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" />
+               </BorderPane.margin>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </GridPane>
+         </center>
+         <bottom>
+            <BorderPane BorderPane.alignment="CENTER" />
+         </bottom>
+      </BorderPane>
+   </center>
+</BorderPane>
