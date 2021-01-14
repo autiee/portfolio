@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+C:\kurssit\tietokannat\.metadata\.plugins\org.eclipse.jdt.core
+2519662132.index
+2872044937.index
+2355720679.index
